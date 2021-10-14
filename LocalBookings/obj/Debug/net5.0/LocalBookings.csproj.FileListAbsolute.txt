@@ -1,0 +1,16 @@
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.exe
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.deps.json
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.runtimeconfig.json
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.runtimeconfig.dev.json
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.dll
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\ref\LocalBookings.dll
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.pdb
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.csprojAssemblyReference.cache
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.AssemblyInfoInputs.cache
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.AssemblyInfo.cs
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.csproj.CoreCompileInputs.cache
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.dll
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\ref\LocalBookings.dll
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.pdb
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.genruntimeconfig.cache
