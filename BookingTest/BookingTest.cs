@@ -68,7 +68,6 @@ namespace BookingTest
             // Assert
 
             Assert.NotNull(results);
-            Assert.Equal(6, results.Length);
             Assert.Collection(results,
                 slot =>
                 {
@@ -94,11 +93,6 @@ namespace BookingTest
                  {
                      Assert.Equal(new DateTime(2021, 09, 24, 10, 00, 00), slot.StartTime);
                      Assert.Equal(new DateTime(2021, 09, 24, 15, 00, 00), slot.EndTime);
-                 },
-                 slot =>
-                 {
-                     Assert.Equal(new DateTime(2021, 09, 24, 15, 30, 00), slot.StartTime);
-                     Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
                  });
 
         }
@@ -140,7 +134,6 @@ namespace BookingTest
             // Assert
 
             Assert.NotNull(results);
-            Assert.Equal(9, results.Length);
             Assert.Collection(results,
                slot =>
                {
@@ -166,26 +159,6 @@ namespace BookingTest
                 {
                     Assert.Equal(new DateTime(2021, 09, 23, 13, 30, 00), slot.StartTime);
                     Assert.Equal(new DateTime(2021, 09, 23, 15, 00, 00), slot.EndTime);
-                },
-                slot =>
-                {
-                    Assert.Equal(new DateTime(2021, 09, 23, 15, 30, 00), slot.StartTime);
-                    Assert.Equal(new DateTime(2021, 09, 23, 17, 00, 00), slot.EndTime);
-                },
-                 slot =>
-                 {
-                     Assert.Equal(new DateTime(2021, 09, 24, 11, 45, 00), slot.StartTime);
-                     Assert.Equal(new DateTime(2021, 09, 24, 13, 00, 00), slot.EndTime);
-                 },
-                slot =>
-                {
-                    Assert.Equal(new DateTime(2021, 09, 24, 13, 30, 00), slot.StartTime);
-                    Assert.Equal(new DateTime(2021, 09, 24, 15, 00, 00), slot.EndTime);
-                },
-                slot =>
-                {
-                    Assert.Equal(new DateTime(2021, 09, 24, 15, 30, 00), slot.StartTime);
-                    Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
                 });
         }
 
@@ -230,7 +203,6 @@ namespace BookingTest
             // Assert
 
             Assert.NotNull(results);
-            Assert.Equal(3, results.Length);
             Assert.Collection(results,
                slot =>
                {
@@ -246,6 +218,16 @@ namespace BookingTest
                {
                    Assert.Equal(new DateTime(2021, 09, 24, 15, 30, 00), slot.StartTime);
                    Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
+               },
+               slot =>
+               {
+                   Assert.Equal(new DateTime(2021, 09, 25, 08, 00, 00), slot.StartTime);
+                   Assert.Equal(new DateTime(2021, 09, 25, 17, 00, 00), slot.EndTime);
+               },
+               slot =>
+               {
+                   Assert.Equal(new DateTime(2021, 09, 26, 08, 00, 00), slot.StartTime);
+                   Assert.Equal(new DateTime(2021, 09, 26, 17, 00, 00), slot.EndTime);
                });
 
 
@@ -289,7 +271,6 @@ namespace BookingTest
             // Assert
 
             Assert.NotNull(results);
-            Assert.Equal(3, results.Length);
             Assert.Collection(results,
                slot =>
                {
@@ -305,6 +286,16 @@ namespace BookingTest
                {
                    Assert.Equal(new DateTime(2021, 09, 24, 15, 30, 00), slot.StartTime);
                    Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
+               },
+               slot =>
+               {
+                   Assert.Equal(new DateTime(2021, 09, 25, 08, 00, 00), slot.StartTime);
+                   Assert.Equal(new DateTime(2021, 09, 25, 17, 00, 00), slot.EndTime);
+               },
+               slot =>
+               {
+                   Assert.Equal(new DateTime(2021, 09, 26, 08, 00, 00), slot.StartTime);
+                   Assert.Equal(new DateTime(2021, 09, 26, 17, 00, 00), slot.EndTime);
                });
 
 
@@ -344,7 +335,6 @@ namespace BookingTest
             // Assert
 
             Assert.NotNull(results);
-            Assert.Equal(6, results.Length);
             Assert.Collection(results,
                slot =>
                {
@@ -370,11 +360,6 @@ namespace BookingTest
                 {
                     Assert.Equal(new DateTime(2021, 09, 24, 10, 00, 00), slot.StartTime);
                     Assert.Equal(new DateTime(2021, 09, 24, 15, 00, 00), slot.EndTime);
-                },
-                slot =>
-                {
-                    Assert.Equal(new DateTime(2021, 09, 24, 15, 30, 00), slot.StartTime);
-                    Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
                 });
 
 
