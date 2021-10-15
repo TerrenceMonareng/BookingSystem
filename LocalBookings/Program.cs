@@ -10,8 +10,8 @@ namespace LocalBookings
         static void Main(string[] args)
         {
 
-           ;
-            Console.WriteLine(DateTime.Now.TimeOfDay.ToString());
+           
+            Console.WriteLine(DateTime.DaysInMonth(2021, 10).ToString());
             var name = new Person();
             var calenderService = new CalendarService();
 
@@ -172,7 +172,15 @@ namespace LocalBookings
 
             Console.WriteLine("Available time slots for required people are shown below:");
             Console.WriteLine();
-            DisplayeSlots(availableSlots);
+
+            if (availableSlots.Length != 0)
+            {
+                DisplayeSlots(availableSlots);
+            }
+            else
+            {
+                Console.WriteLine("user has no events");
+            }
 
 
             void DisplayeSlots(AvailableSlot[] availableSlots)
@@ -186,7 +194,7 @@ namespace LocalBookings
             }
             Console.WriteLine();
 
-            TimeSpan interval = TimeSpan.FromSeconds(Convert.ToDouble(duration));
+            TimeSpan interval = TimeSpan.FromMinutes(Convert.ToDouble(duration));
 
             for (int i = 0; i < availableSlots.Length; i++)
             {
@@ -202,6 +210,9 @@ namespace LocalBookings
 
                         Console.WriteLine("your selected slot is: " + availableSlots[i].StartTime + " To " + availableSlots[i].StartTime.Add(interval));
                         Console.WriteLine();
+
+
+
 
                         Console.WriteLine("Enter subject for meeting");
                         var subject = Console.ReadLine();

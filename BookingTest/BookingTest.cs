@@ -187,8 +187,6 @@ namespace BookingTest
                     Assert.Equal(new DateTime(2021, 09, 24, 15, 30, 00), slot.StartTime);
                     Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
                 });
-
-
         }
 
         [Fact]
