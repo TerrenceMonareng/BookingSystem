@@ -10,8 +10,8 @@ namespace LocalBookings
         static void Main(string[] args)
         {
 
-           
-            Console.WriteLine(DateTime.DaysInMonth(2021, 10).ToString());
+
+            Console.WriteLine(DateTime.DaysInMonth(2021, 09).ToString());
             var name = new Person();
             var calenderService = new CalendarService();
 
@@ -51,39 +51,6 @@ namespace LocalBookings
 
             }
 
-            Console.WriteLine();
-
-            foreach (var item in rooms)
-            {
-                Console.WriteLine(item.Email);
-            }
-            Console.WriteLine();
-            Console.WriteLine("Please select available room from the list above ");
-
-            room.Email = Console.ReadLine();
-            room = calenderService.FindRoom(room.Email);
-
-
-            // select room   ***********************************************************************************************************************************************
-
-
-            while (true)
-            {
-                if (room.Email != null)
-                {
-                    Console.WriteLine("Your selected room is: " + room.Email);
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Please select a valid room");
-                    Console.WriteLine();
-                    room.Email = Console.ReadLine();
-                    room = calenderService.FindRoom(room.Email);
-
-                }
-
-            }
             Console.WriteLine();
 
 
@@ -153,6 +120,7 @@ namespace LocalBookings
             Console.WriteLine();
 
 
+
             // select and display duration and available slots  ****************************************************************************************************************
 
             Console.WriteLine("please select duration for the meeting");
@@ -162,41 +130,90 @@ namespace LocalBookings
             var bookingService = new BookingService();
 
             Console.WriteLine("your selected duration is: " + duration + " minutes");
-
-            var availableSlots = bookingService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration), rooms.ToArray());
-
-
             Console.WriteLine();
 
+
+            // Displaying available Rooms  **************************************************************************************************************************************************************
+
+            var availableSlots = bookingService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration));
+
+            var listOfAvailableRooms = bookingService.RetrieveAvailableRooms(rooms, availableSlots, Convert.ToDouble(duration));
+
+            Console.WriteLine("The Available Rooms for your required peoplen are shown below");
+
+            foreach (var item in listOfAvailableRooms)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Please select available room from the list above ");
+
+
+            room.Email = Console.ReadLine();
+            room = calenderService.FindRoom(room.Email);
+            
+
+            var room1 = new List<Room>();
+
+            room1.Add(room);
+
+
+            var retrieveAvailableRooms = bookingService.CalculateAvailableRooms(Convert.ToDouble(duration),room1.ToArray());
+
+
+            var Availiable = bookingService.GetFinalSlots(retrieveAvailableRooms, availableSlots);
+            Console.WriteLine();
+
+            // select room   ***********************************************************************************************************************************************
+
+
+            //while (true)
+            //{
+            //    if (room.Email != null && retrieveAvailableRooms.Length > 0)
+            //    {
+            //        Console.WriteLine("Your selected room is: " + room.Email);
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Please select a valid room from the available rooms below");
+
+            //        foreach (var item in retrieveAvailableRooms)
+            //        {
+            //            Console.WriteLine(item);
+            //        }
+            //        Console.WriteLine();
+            //        room.Email = Console.ReadLine();
+            //        room = calenderService.FindRoom(room.Email);
+            //        availableSlots = bookingService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration), room);
+
+            //    }
+
+            //}
+        
             Console.WriteLine();
 
             Console.WriteLine("Available time slots for required people are shown below:");
             Console.WriteLine();
 
-            if (availableSlots.Length != 0)
+            if (Availiable.Length != 0)
             {
-                DisplayeSlots(availableSlots);
+                foreach (var item in Availiable)
+                {
+                    Console.WriteLine("From: " + item.StartTime + " To " + item.EndTime);
+                }
             }
             else
             {
                 Console.WriteLine("user has no events");
             }
 
-
-            void DisplayeSlots(AvailableSlot[] availableSlots)
-            {
-                foreach (var item in availableSlots)
-                {
-                    Console.WriteLine("From: " + item.StartTime + " To " + item.EndTime);
-
-                }
-
-            }
             Console.WriteLine();
 
             TimeSpan interval = TimeSpan.FromMinutes(Convert.ToDouble(duration));
 
-            for (int i = 0; i < availableSlots.Length; i++)
+            for (int i = 0; i < Availiable.Length; i++)
             {
                 Console.WriteLine("please select available slots Number from list above");
                 Console.WriteLine();
@@ -205,10 +222,10 @@ namespace LocalBookings
 
                 while (true)
                 {
-                    if (i < availableSlots.Length)
+                    if (i < Availiable.Length)
                     {
 
-                        Console.WriteLine("your selected slot is: " + availableSlots[i].StartTime + " To " + availableSlots[i].StartTime.Add(interval));
+                        Console.WriteLine("your selected slot is: " + Availiable[i].StartTime + " To " + Availiable[i].StartTime.Add(interval));
                         Console.WriteLine();
 
 

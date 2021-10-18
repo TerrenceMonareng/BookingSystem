@@ -210,21 +210,33 @@ namespace LocalBookings.Services
                     {
                         new()
                         {
-                            StartTime= new DateTime(2021,09,22,07,00,00),
-                            EndTime = new DateTime(2021,09,22,08,00,00)
+                            StartTime= new DateTime(2021,09,22,08,00,00),
+                            EndTime = new DateTime(2021,09,22,17,00,00)
 
 
                         },
                         new()
                         {
-                            StartTime= new DateTime(2021,09,22,09,00,00),
-                            EndTime = new DateTime(2021,09,22,10,00,00)
+                            StartTime= new DateTime(2021,09,23,08,00,00),
+                            EndTime = new DateTime(2021,09,23,17,00,00)
 
                         },
                         new()
                         {
-                            StartTime= new DateTime(2021,09,22,15,00,00),
-                            EndTime = new DateTime(2021,09,22,15,30,00)
+                            StartTime= new DateTime(2021,09,24,08,00,00),
+                            EndTime = new DateTime(2021,09,24,17,00,00)
+
+                        },
+                          new()
+                        {
+                            StartTime= new DateTime(2021,09,25,08,00,00),
+                            EndTime = new DateTime(2021,09,25,17,00,00)
+
+                        },
+                        new()
+                        {
+                            StartTime= new DateTime(2021,09,26,08,00,00),
+                            EndTime = new DateTime(2021,09,26,17,00,00)
 
                         }
                     }

@@ -6,7 +6,7 @@ using Xunit;
 
 namespace BookingTest
 {
-    public class BookingTest
+    public class CalculateAvailableSlotsTests
     {
         private int Add(int a, int b)
         {
@@ -57,13 +57,12 @@ namespace BookingTest
 
             };
 
-            var listOfRooms = new List<Room>();
             person = calenderService.FindPerson(person.Email);
             var people = calenderService.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration, listOfRooms.ToArray());
+            var results = booking.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -123,13 +122,12 @@ namespace BookingTest
                },
             };
 
-            var listOfRooms = new List<Room>();
             person = calenderService.FindPerson(person.Email);
             var people = calenderService.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration, listOfRooms.ToArray());
+            var results = booking.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -192,13 +190,12 @@ namespace BookingTest
                }
             };
 
-            var listOfRooms = new List<Room>();
             person = calenderService.FindPerson(person.Email);
             var people = calenderService.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration, listOfRooms.ToArray());
+            var results = booking.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -260,13 +257,12 @@ namespace BookingTest
                }
             };
 
-            var listOfRooms = new List<Room>();
             person = calenderService.FindPerson(person.Email);
             var people = calenderService.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration, listOfRooms.ToArray());
+            var results = booking.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -324,13 +320,12 @@ namespace BookingTest
 
             };
 
-            var listOfRooms = new List<Room>();
             person = calenderService.FindPerson(person.Email);
             var people = calenderService.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration, listOfRooms.ToArray());
+            var results = booking.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
