@@ -17,7 +17,7 @@ namespace LocalBookings.Services
 
             // Flatterning the arrays including events for the room
 
-            var flattenedArray = required.SelectMany(m => m.Events).ToArray();
+            var flattenedArray = required.OrderBy(x => x.Email).SelectMany(m => m.Events).ToArray();
 
             // Sorting up source list
             filtered = flattenedArray.OrderBy(o => o.StartTime).ToList();
@@ -402,10 +402,10 @@ namespace LocalBookings.Services
 
             return List.ToArray();
         }
-        public string[] RetrieveAvailableRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, double duration)
+        public List<FinalAvailableSlots[]> RetrieveAvailableRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, double duration)
         {
             var availableRoomsList = new List<Room>();
-            var availableRoomsList1 = new List<string>();
+            var availableRoomsList1 = new List<FinalAvailableSlots[]>();
 
             foreach (var item in rooms)
             {
@@ -417,7 +417,28 @@ namespace LocalBookings.Services
 
                 if (availableRooms.Count() > 0)
                 {
-                    availableRoomsList1.Add(item.Email);
+                    foreach (var item1 in availableRooms)
+                    {
+                        var slot = new FinalAvailableSlots[]
+
+                        {
+                            new()
+                            {
+                                Email =item.Email,
+                                AvailableSlots = new AvailableSlot[]
+                                {
+                                    new()
+                                    {
+                                        StartTime =item1.StartTime,
+                                        EndTime = item1.EndTime
+                                    }
+                                }
+                            }
+                        };
+
+                        availableRoomsList1.Add(slot);
+                    }
+
                     availableRoomsList.Remove(item);
                 }
 
@@ -428,8 +449,30 @@ namespace LocalBookings.Services
 
             }
 
-            return availableRoomsList1.ToArray();
+            return availableRoomsList1;
         }
-    }
 
+        public FinalAvailableSlots[] CombineAvailableRooms(IEnumerable<Room> rooms, List<FinalAvailableSlots[]> combinedAvailableSlots, AvailableSlot[] availableSlots, double duration)
+        {
+
+            combinedAvailableSlots = RetrieveAvailableRooms(rooms, availableSlots, duration);
+
+           var results = combinedAvailableSlots.SelectMany(x => x).GroupBy(x => x.Email);
+
+
+            foreach (var item in results)
+            {
+                foreach (var item1 in item)
+                {
+                    
+                }
+            }
+            // var resu = results.SelectMany(x => x.AvailableSlots);
+
+
+
+            return new FinalAvailableSlots[] { }; //results.ToArray();
+        }
+
+    }
 }
