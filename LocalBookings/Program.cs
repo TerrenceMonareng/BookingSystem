@@ -143,7 +143,16 @@ namespace LocalBookings
 
             foreach (var item in listOfAvailableRooms)
             {
-                Console.WriteLine(item);
+                foreach (var item1 in item)
+                {
+
+                    foreach (var item2 in item1.AvailableSlots)
+                    {
+                        Console.WriteLine(item2.StartTime+ " To "+ item2.EndTime + " email " + item1.Email);
+                    }
+                    
+                }
+               
             }
             Console.WriteLine();
 
@@ -163,6 +172,10 @@ namespace LocalBookings
 
 
             var Availiable = bookingService.GetFinalSlots(retrieveAvailableRooms, availableSlots);
+
+            var result = bookingService.CombineAvailableRooms(rooms, listOfAvailableRooms, availableSlots, Convert.ToDouble(duration));
+
+
             Console.WriteLine();
 
             // select room   ***********************************************************************************************************************************************
