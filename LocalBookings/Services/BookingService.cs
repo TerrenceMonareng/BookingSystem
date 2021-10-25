@@ -452,26 +452,51 @@ namespace LocalBookings.Services
             return availableRoomsList1;
         }
 
-        public FinalAvailableSlots[] CombineAvailableRooms(IEnumerable<Room> rooms, List<FinalAvailableSlots[]> combinedAvailableSlots, AvailableSlot[] availableSlots, double duration)
+        public List<AvailableSlots> CombineAvailableRooms(List<FinalAvailableSlots[]> combinedAvailableSlots)
         {
+            var events = new List<AvailableSlots>();
 
-            combinedAvailableSlots = RetrieveAvailableRooms(rooms, availableSlots, duration);
+            var mystart = new List<DateTime>();
+            var myend = new List<DateTime>();
+            var myemails = new List<String>();
 
-           var results = combinedAvailableSlots.SelectMany(x => x).GroupBy(x => x.Email);
 
-
-            foreach (var item in results)
+            foreach (var item in combinedAvailableSlots)
             {
-                foreach (var item1 in item)
+                var itemx = item[0];
+
+                bool hit = false;
+
+                for (int i = 0; i < mystart.Count(); i++)
                 {
-                    
+                    if (mystart[i] == itemx.AvailableSlots[0].StartTime && myend[i] == itemx.AvailableSlots[0].EndTime)
+                    {
+                        hit = true;
+                        myemails[i] = myemails[i] + ", " + itemx.Email;
+                        break;
+                    }
                 }
+                if (hit == false)
+                {
+                    mystart.Add(itemx.AvailableSlots[0].StartTime);
+                    myend.Add(itemx.AvailableSlots[0].EndTime);
+                    myemails.Add(itemx.Email);
+                }
+
             }
-            // var resu = results.SelectMany(x => x.AvailableSlots);
 
+            var slot = new AvailableSlots
+            {
+                Email = myemails,
+                StartTime = mystart,
+                EndTime = myend
+            };
 
+            events.Add(slot);
 
-            return new FinalAvailableSlots[] { }; //results.ToArray();
+        
+
+            return events; 
         }
 
     }
