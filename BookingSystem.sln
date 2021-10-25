@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalBookings", "LocalBookings\LocalBookings.csproj", "{C6DB1F0F-EA4E-4A17-96A9-D709504E376C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingTest", "BookingTest\BookingTest.csproj", "{E8CB62C8-B9A2-40BA-A4B2-E0C2A6EA0EC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingTest", "BookingTest\BookingTest.csproj", "{E8CB62C8-B9A2-40BA-A4B2-E0C2A6EA0EC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingsApi", "BookingsApi\BookingsApi.csproj", "{DC3A988A-A38D-4DBC-8DBD-1A19C737E276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{E8CB62C8-B9A2-40BA-A4B2-E0C2A6EA0EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8CB62C8-B9A2-40BA-A4B2-E0C2A6EA0EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8CB62C8-B9A2-40BA-A4B2-E0C2A6EA0EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC3A988A-A38D-4DBC-8DBD-1A19C737E276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC3A988A-A38D-4DBC-8DBD-1A19C737E276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC3A988A-A38D-4DBC-8DBD-1A19C737E276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC3A988A-A38D-4DBC-8DBD-1A19C737E276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
