@@ -402,7 +402,7 @@ namespace LocalBookings.Services
 
             return List.ToArray();
         }
-        public List<FinalAvailableSlots[]> RetrieveAvailableRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, double duration)
+        public List<FinalAvailableSlots[]> GetAVailableSlotsForAllRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, double duration)
         {
             var availableRoomsList = new List<Room>();
             var availableRoomsList1 = new List<FinalAvailableSlots[]>();
@@ -410,10 +410,10 @@ namespace LocalBookings.Services
             foreach (var item in rooms)
             {
                 availableRoomsList.Add(item);
-                var availableSLots = CalculateAvailableRooms(duration, availableRoomsList.ToArray());
+                var availableRoomSLots = CalculateAvailableRooms(duration, availableRoomsList.ToArray());
 
 
-                var availableRooms = GetFinalSlots(availableSlots, availableSLots);
+                var availableRooms = GetFinalSlots(availableRoomSLots,availableSlots);
 
                 if (availableRooms.Count() > 0)
                 {
@@ -452,7 +452,7 @@ namespace LocalBookings.Services
             return availableRoomsList1;
         }
 
-        public List<AvailableSlots> CombineAvailableRooms(List<FinalAvailableSlots[]> combinedAvailableSlots)
+        public List<AvailableSlots> CombineFinalAvailableSlots(List<FinalAvailableSlots[]> combinedAvailableSlots)
         {
             var events = new List<AvailableSlots>();
 

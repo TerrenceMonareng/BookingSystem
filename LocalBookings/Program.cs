@@ -136,9 +136,9 @@ namespace LocalBookings
 
             var availableSlots = bookingService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration));
 
-            var listOfAvailableRooms = bookingService.RetrieveAvailableRooms(rooms, availableSlots, Convert.ToDouble(duration));
+            var listOfAvailableRooms = bookingService.GetAVailableSlotsForAllRooms(rooms, availableSlots, Convert.ToDouble(duration));
 
-            var combinedAvailableSlots = bookingService.CombineAvailableRooms(listOfAvailableRooms);
+            var combinedAvailableSlots = bookingService.CombineFinalAvailableSlots(listOfAvailableRooms);
 
             Console.WriteLine("The Available Rooms and time slots for your required people are shown below");
 

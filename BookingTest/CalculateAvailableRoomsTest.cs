@@ -40,7 +40,32 @@ namespace BookingTest
             // Assert
 
             Assert.NotNull(results);
-            Assert.Equal(0, results.Length);
+            Assert.Collection(results,
+                slot =>
+                {
+                    Assert.Equal(new DateTime(2021, 09, 22, 10, 00, 00), slot.StartTime);
+                    Assert.Equal(new DateTime(2021, 09, 22, 15, 00, 00), slot.EndTime);
+                },
+                 slot =>
+                 {
+                     Assert.Equal(new DateTime(2021, 09, 22, 15, 30, 00), slot.StartTime);
+                     Assert.Equal(new DateTime(2021, 09, 22, 17, 00, 00), slot.EndTime);
+                 },
+                 slot =>
+                 {
+                     Assert.Equal(new DateTime(2021, 09, 23, 08, 00, 00), slot.StartTime);
+                     Assert.Equal(new DateTime(2021, 09, 23, 17, 00, 00), slot.EndTime);
+                 },
+                 slot =>
+                 {
+                     Assert.Equal(new DateTime(2021, 09, 24, 08, 00, 00), slot.StartTime);
+                     Assert.Equal(new DateTime(2021, 09, 24, 17, 00, 00), slot.EndTime);
+                 },
+                 slot =>
+                 {
+                     Assert.Equal(new DateTime(2021, 09, 25, 08, 00, 00), slot.StartTime);
+                     Assert.Equal(new DateTime(2021, 09, 25, 17, 00, 00), slot.EndTime);
+                 });
         }
 
         [Fact]
