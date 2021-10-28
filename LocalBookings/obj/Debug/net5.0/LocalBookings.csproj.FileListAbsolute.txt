@@ -5,11 +5,16 @@ C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\Loca
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.dll
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\ref\LocalBookings.dll
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\LocalBookings.pdb
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\Core.dll
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\Infrastructure.dll
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\Core.pdb
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\bin\Debug\net5.0\Infrastructure.pdb
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.csprojAssemblyReference.cache
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.AssemblyInfoInputs.cache
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.AssemblyInfo.cs
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.csproj.CoreCompileInputs.cache
+C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.csproj.CopyComplete
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.dll
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\ref\LocalBookings.dll
 C:\Users\terrence\source\repos\BookingSystem\LocalBookings\obj\Debug\net5.0\LocalBookings.pdb

@@ -53,7 +53,7 @@ namespace BookingTest
 
             // Act
 
-            var results = booking.GetFinalSlots(availableRooms, availableSlots);
+            var results = booking.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots);
 
             // Assert
 
@@ -130,7 +130,7 @@ namespace BookingTest
 
             // Act
 
-            var results = booking.GetFinalSlots(availableRooms, availableSlots);
+            var results = booking.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots);
 
             // Assert
 
@@ -204,7 +204,7 @@ namespace BookingTest
 
             // Act
 
-            var results = booking.GetFinalSlots(availableRooms, availableSlots);
+            var results = booking.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots);
 
             // Assert
 

@@ -34,7 +34,8 @@
       "BookingsApi/1.0.0": {
         "dependencies": {
           "BookingTest": "1.0.0",
-          "LocalBookings": "1.0.0",
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0",
           "MediatR": "9.0.0",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -1506,6 +1507,8 @@
       },
       "BookingTest/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0",
           "LocalBookings": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
           "xunit": "2.4.1"
@@ -1517,7 +1520,30 @@
           "BookingTest.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "runtime": {
+          "Core.dll": {}
+        },
+        "compile": {
+          "Core.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "Infrastructure.dll": {}
+        },
+        "compile": {
+          "Infrastructure.dll": {}
+        }
+      },
       "LocalBookings/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
         "runtime": {
           "LocalBookings.dll": {}
         },
@@ -3911,6 +3937,16 @@
       "hashPath": "xunit.extensibility.execution.2.4.1.nupkg.sha512"
     },
     "BookingTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

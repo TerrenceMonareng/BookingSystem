@@ -3,13 +3,11 @@ using LocalBookings.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BookingTest
 {
-   public class CombineFinalAvailableSlotsTests
+    public class CombineFinalAvailableSlotsTests
     {
         [Fact]
         public void Available_Slots_For_Agile_And_Three_People_Test()
@@ -40,9 +38,9 @@ namespace BookingTest
             person = calenderService.FindPerson(person.Email);
             var people = calenderService.FindPeople(listOfNames.ToArray());
 
-      
 
-           var rooms = calenderService.GetRooms();
+
+            var rooms = calenderService.GetRooms();
 
 
             double duration = 61;
@@ -82,7 +80,7 @@ namespace BookingTest
                    Assert.Equal(new DateTime(2021, 09, 25, 17, 00, 00), slot.EndTime[3]);
 
                });
-      
+
         }
 
         [Fact]
@@ -162,5 +160,7 @@ namespace BookingTest
                });
 
         }
+
+     
     }
 }
