@@ -14,7 +14,6 @@ namespace BookingsApi.Controllers.BookingServiceController
     {
         private readonly ILogger<GetAvailableRoomsController> _logger;
 
-       
         public GetAvailableRoomsController(ILogger<GetAvailableRoomsController> logger)
         {
             _logger = logger;

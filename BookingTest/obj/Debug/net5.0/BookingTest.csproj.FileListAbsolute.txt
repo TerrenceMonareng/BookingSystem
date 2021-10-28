@@ -93,7 +93,11 @@ C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\zh-Han
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\Core.dll
+C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\Infrastructure.dll
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\LocalBookings.dll
+C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\Core.pdb
+C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\Infrastructure.pdb
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\bin\Debug\net5.0\LocalBookings.pdb
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\obj\Debug\net5.0\BookingTest.csprojAssemblyReference.cache
 C:\Users\terrence\source\repos\BookingSystem\BookingTest\obj\Debug\net5.0\BookingTest.GeneratedMSBuildEditorConfig.editorconfig

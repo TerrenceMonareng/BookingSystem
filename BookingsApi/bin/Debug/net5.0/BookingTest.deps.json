@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "BookingTest/1.0.0": {
         "dependencies": {
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0",
           "LocalBookings": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
           "coverlet.collector": "3.0.2",
@@ -1090,7 +1092,24 @@
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
+      "Core/1.0.0": {
+        "runtime": {
+          "Core.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "Infrastructure.dll": {}
+        }
+      },
       "LocalBookings/1.0.0": {
+        "dependencies": {
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
         "runtime": {
           "LocalBookings.dll": {}
         }
@@ -1746,6 +1765,16 @@
       "sha512": "sha512-kZZSmOmKA8OBlAJaquPXnJJLM9RwQ27H7BMVqfMLUcTi9xHinWGJiWksa3D4NEtz0wZ/nxd2mogObvBgJKCRhQ==",
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
+    },
+    "Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "LocalBookings/1.0.0": {
       "type": "project",

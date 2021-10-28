@@ -40,8 +40,11 @@
               "C:\\Users\\terrence\\source\\repos\\BookingSystem\\BookingTest\\BookingTest.csproj": {
                 "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\BookingTest\\BookingTest.csproj"
               },
-              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj": {
-                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj"
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj"
+              },
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -120,6 +123,12 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj"
+              },
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj"
+              },
               "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj": {
                 "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj"
               }
@@ -176,6 +185,136 @@
         }
       }
     },
+    "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\terrence\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\terrence\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Dev\\Sefeko.LocalFeed\\": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {},
+          "https://pkgs.dev.azure.com/gendac1/_packaging/Sefeko/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\terrence\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\terrence\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Dev\\Sefeko.LocalFeed\\": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {},
+          "https://pkgs.dev.azure.com/gendac1/_packaging/Sefeko/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -208,7 +347,14 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj"
+              },
+              "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

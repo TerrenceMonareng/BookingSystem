@@ -11,7 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookingTest\BookingTest.csproj" />
-    <ProjectReference Include="..\LocalBookings\LocalBookings.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1742,6 +1742,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0",
           "LocalBookings": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
           "xunit": "2.4.1"
@@ -1753,9 +1755,36 @@
           "bin/placeholder/BookingTest.dll": {}
         }
       },
+      "Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
       "LocalBookings/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Core": "1.0.0",
+          "Infrastructure": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/LocalBookings.dll": {}
         },
@@ -6001,6 +6030,16 @@
       "path": "../BookingTest/BookingTest.csproj",
       "msbuildProject": "../BookingTest/BookingTest.csproj"
     },
+    "Core/1.0.0": {
+      "type": "project",
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
+    },
     "LocalBookings/1.0.0": {
       "type": "project",
       "path": "../LocalBookings/LocalBookings.csproj",
@@ -6010,7 +6049,8 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "BookingTest >= 1.0.0",
-      "LocalBookings >= 1.0.0",
+      "Core >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "MediatR >= 9.0.0",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -6056,8 +6096,11 @@
             "C:\\Users\\terrence\\source\\repos\\BookingSystem\\BookingTest\\BookingTest.csproj": {
               "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\BookingTest\\BookingTest.csproj"
             },
-            "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj": {
-              "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\LocalBookings\\LocalBookings.csproj"
+            "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Core\\Core.csproj"
+            },
+            "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\terrence\\source\\repos\\BookingSystem\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

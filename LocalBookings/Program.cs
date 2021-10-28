@@ -169,7 +169,7 @@ namespace LocalBookings
             var retrieveAvailableRooms = bookingService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
 
 
-            var Availiable = bookingService.GetFinalSlots(retrieveAvailableRooms, availableSlots);
+            var Availiable = bookingService.GetAvailableSlotsForPeopleAndRoom(retrieveAvailableRooms, availableSlots);
 
 
             while (true)
