@@ -1,4 +1,7 @@
-﻿using LocalBookings.Models;
+﻿using Infrastructure.Services.Interfarces.BookingService;
+using Infrastructure.Services.Interfarces.CalendarServices;
+using LocalBookings;
+using LocalBookings.Models;
 using LocalBookings.Services;
 using System;
 using System.Collections.Generic;
@@ -9,13 +12,17 @@ namespace BookingTest
 {
     public class CombineFinalAvailableSlotsTests
     {
+
+        IPeopleService peopleService = Factory.CreatePersonService();
+        IRoomsCalendar roomsCalendar = Factory.CreateRoomsCalendar();
+        IPeopleCalendar peopleCalendar = Factory.CreatePeopleCalendar();
+        IPeopleAndRoomsService peopleAndRoomsService = Factory.CreatePeopleAndRoomService();
+
         [Fact]
         public void Available_Slots_For_Agile_And_Three_People_Test()
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Amanda";
 
@@ -35,12 +42,12 @@ namespace BookingTest
                }
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
 
 
-            var rooms = calenderService.GetRooms();
+            var rooms = roomsCalendar.GetRooms();
 
 
             double duration = 61;
@@ -48,14 +55,14 @@ namespace BookingTest
             var listOfRooms = new List<Room>();
 
 
-            var availableSlots = booking.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
 
-            var availableRoomSlots = booking.GetAVailableSlotsForAllRooms(rooms, availableSlots, duration);
+            var availableRoomSlots = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots, duration);
 
 
             // Act
 
-            var results = booking.CombineFinalAvailableSlots(availableRoomSlots);
+            var results = peopleAndRoomsService.CombineFinalAvailableSlots(availableRoomSlots);
 
             // Assert
 
@@ -88,8 +95,6 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Terrence";
 
@@ -105,12 +110,12 @@ namespace BookingTest
                }
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
 
 
-            var rooms = calenderService.GetRooms();
+            var rooms = roomsCalendar.GetRooms();
 
 
             double duration = 61;
@@ -118,14 +123,14 @@ namespace BookingTest
             var listOfRooms = new List<Room>();
 
 
-            var availableSlots = booking.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
 
-            var availableRoomSlots = booking.GetAVailableSlotsForAllRooms(rooms, availableSlots, duration);
+            var availableRoomSlots = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots, duration);
 
 
             // Act
 
-            var results = booking.CombineFinalAvailableSlots(availableRoomSlots);
+            var results = peopleAndRoomsService.CombineFinalAvailableSlots(availableRoomSlots);
 
             // Assert
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services.BookingServices
 {
-   public class RoomService : IRoomService
+   public class RoomService : IRoomsService
     {
         public IEnumerable<AvailableSlot> GetRoomAvailableSlots(DateTime dayStart, DateTime dayEnd, Room[] room)
         {

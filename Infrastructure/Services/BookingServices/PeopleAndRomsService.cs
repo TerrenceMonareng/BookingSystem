@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services.BookingServices
 {
-   public class PeopleAndRomsService : IPeopleAndRoomServices
+   public class PeopleAndRomsService : IPeopleAndRoomsService
     {
-        private IRoomService _roomService;
+        private IRoomsService _roomService;
 
-        public PeopleAndRomsService(IRoomService roomService)
+        public PeopleAndRomsService(IRoomsService roomService)
         {
             _roomService = roomService;
         }
-        public AvailableSlot[] GetFinalSlots(IEnumerable<AvailableSlot> listRoom1, AvailableSlot[] listPeople1)
+
+        public AvailableSlot[] GetAvailableSlotsForPeopleAndRoom(IEnumerable<AvailableSlot> listRoom1, AvailableSlot[] listPeople1)
         {
 
             var listRoom = listRoom1.OrderBy(x => x.StartTime);
@@ -84,7 +85,7 @@ namespace Infrastructure.Services.BookingServices
                 var availableRoomSLots = _roomService.CalculateAvailableRooms(duration, availableRoomsList.ToArray());
 
 
-                var availableRooms = GetFinalSlots(availableRoomSLots, availableSlots);
+                var availableRooms = GetAvailableSlotsForPeopleAndRoom(availableRoomSLots, availableSlots);
 
                 if (availableRooms.Count() > 0)
                 {
@@ -165,9 +166,8 @@ namespace Infrastructure.Services.BookingServices
 
             events.Add(slot);
 
-
-
             return events;
         }
+      
     }
 }

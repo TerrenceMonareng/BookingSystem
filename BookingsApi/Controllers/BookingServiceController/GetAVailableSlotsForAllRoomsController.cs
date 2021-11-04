@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 namespace BookingsApi.Controllers.BookingServiceController
 {
+  
     [ApiController]
     [Route("[controller]")]
     public class GetAVailableSlotsForAllRoomsController : ControllerBase

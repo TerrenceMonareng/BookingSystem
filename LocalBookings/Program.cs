@@ -1,4 +1,6 @@
-﻿using LocalBookings.Models;
+﻿using Infrastructure.Services.Interfarces.BookingService;
+using Infrastructure.Services.Interfarces.CalendarServices;
+using LocalBookings.Models;
 using LocalBookings.Services;
 using System;
 using System.Collections.Generic;
@@ -10,28 +12,36 @@ namespace LocalBookings
     {
         static void Main(string[] args)
         {
+            #region Services
+
+            IPeopleService peopleService = Factory.CreatePersonService();
+            IRoomsService roomService = Factory.CreateRoomService();
+            IRoomsCalendar roomsCalendar = Factory.CreateRoomsCalendar();
+            IPeopleCalendar peopleCalendar = Factory.CreatePeopleCalendar();
+            IPeopleAndRoomsService peopleAndRoomsService = Factory.CreatePeopleAndRoomService();
+
+            #endregion
 
             var name = new Person();
-            var calenderService = new CalendarService();
-
+           
             var room = new Room();
 
             var rooms = new List<Room>();
 
-            rooms = calenderService.GetRooms();
+            rooms = roomsCalendar.GetRooms();
 
             var listOfPeople = new List<Person>();
 
-            listOfPeople = calenderService.GetPeople();
+            listOfPeople = peopleCalendar.GetPeople();
 
 
 
-            // Enter User name ********************************************************************************************************************************************
+            #region Enter User name 
 
             Console.WriteLine("user name");
             Console.WriteLine();
             name.Email = Console.ReadLine();
-            name = calenderService.FindPerson(name.Email);
+            name = peopleCalendar.FindPerson(name.Email);
 
             while (true)
             {
@@ -45,15 +55,17 @@ namespace LocalBookings
                     Console.WriteLine("please select a valid name");
                     Console.WriteLine();
                     name.Email = Console.ReadLine();
-                    name = calenderService.FindPerson(name.Email);
+                    name = peopleCalendar.FindPerson(name.Email);
                 }
 
             }
 
             Console.WriteLine();
 
+            #endregion
 
-            // select people and print required to attend  *****************************************************************************************************************************
+
+            #region select people and print required to attend  
 
             foreach (var item in listOfPeople)
             {
@@ -75,7 +87,7 @@ namespace LocalBookings
 
                 listOfNames.Add(pers);
             }
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
 
             Console.WriteLine();
@@ -118,27 +130,29 @@ namespace LocalBookings
             }
             Console.WriteLine();
 
+            #endregion
 
-
-            // select and display duration and available slots  ****************************************************************************************************************
+            #region select and display duration and available slots 
 
             Console.WriteLine("please select duration for the meeting");
             Console.WriteLine();
             var duration = Console.ReadLine();
 
-            var bookingService = new BookingService();
+ 
 
             Console.WriteLine("your selected duration is: " + duration + " minutes");
             Console.WriteLine();
 
+            #endregion
 
-            // Displaying available Rooms  **************************************************************************************************************************************************************
 
-            var availableSlots = bookingService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration));
+            #region Displaying available Rooms 
 
-            var listOfAvailableRooms = bookingService.GetAVailableSlotsForAllRooms(rooms, availableSlots, Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration));
 
-            var combinedAvailableSlots = bookingService.CombineFinalAvailableSlots(listOfAvailableRooms);
+            var listOfAvailableRooms = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots, Convert.ToDouble(duration));
+
+            var combinedAvailableSlots = peopleAndRoomsService.CombineFinalAvailableSlots(listOfAvailableRooms);
 
             Console.WriteLine("The Available Rooms and time slots for your required people are shown below");
 
@@ -152,13 +166,15 @@ namespace LocalBookings
             }
             Console.WriteLine();
 
-            // select a Room *************************************************************************************************************************************************************************************
+            #endregion
+
+            #region select a Room 
 
             Console.WriteLine("Please select available room from the list above ");
 
 
             room.Email = Console.ReadLine();
-            room = calenderService.FindRoom(room.Email);
+            room = roomsCalendar.FindRoom(room.Email);
 
 
             var room1 = new List<Room>();
@@ -166,10 +182,10 @@ namespace LocalBookings
             room1.Add(room);
 
 
-            var retrieveAvailableRooms = bookingService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
+            var retrieveAvailableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
 
 
-            var Availiable = bookingService.GetAvailableSlotsForPeopleAndRoom(retrieveAvailableRooms, availableSlots);
+            var Availiable = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(retrieveAvailableRooms, availableSlots);
 
 
             while (true)
@@ -189,8 +205,8 @@ namespace LocalBookings
                     }
                     Console.WriteLine();
                     room.Email = Console.ReadLine();
-                    room = calenderService.FindRoom(room.Email);
-                    retrieveAvailableRooms = bookingService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
+                    room = roomsCalendar.FindRoom(room.Email);
+                    retrieveAvailableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
 
                 }
 
@@ -198,7 +214,9 @@ namespace LocalBookings
 
             Console.WriteLine();
 
-            // Displaying Available slots ****************************************************************************************************************************************************************************************
+            #endregion
+
+            #region Displaying Available slots 
 
             Console.WriteLine("Available time slots for "  +room.Email+ " And required people are shown below:");
             Console.WriteLine();
@@ -217,8 +235,10 @@ namespace LocalBookings
 
             Console.WriteLine();
 
+            #endregion
 
-            // Displaying your selected time Slots****************************************************************************************************************************************************************************************
+
+            #region Displaying your selected time Slots
 
             TimeSpan interval = TimeSpan.FromMinutes(Convert.ToDouble(duration));
 
@@ -262,7 +282,7 @@ namespace LocalBookings
                 }
                 break;
             }
-
+            #endregion
 
             Console.ReadLine();
         }

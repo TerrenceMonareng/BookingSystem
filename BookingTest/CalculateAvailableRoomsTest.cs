@@ -1,41 +1,43 @@
-﻿using LocalBookings.Models;
-using LocalBookings.Services;
+﻿using Infrastructure.Services.Interfarces.BookingService;
+using Infrastructure.Services.Interfarces.CalendarServices;
+using LocalBookings;
+using LocalBookings.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace BookingTest
 {
     public class CalculateAvailableRoomsTest
     {
+        IRoomsService roomService = Factory.CreateRoomService();
+        IRoomsCalendar roomsCalendar = Factory.CreateRoomsCalendar();
+
+
+
         [Fact]
         public void Available_Slots_For_Agile_Test()
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var room = new Room();
 
             room.Email = "Agile";
 
-            room = calenderService.FindRoom(room.Email);
-            
-          
+            room = roomsCalendar.FindRoom(room.Email);
+
+
             double duration = 61;
 
             var listOfRooms = new List<Room>();
 
             listOfRooms.Add(room);
-            
-          
+
+
 
             // Act
 
-            var results = booking.CalculateAvailableRooms(duration, listOfRooms.ToArray());
+            var results = roomService.CalculateAvailableRooms(duration, listOfRooms.ToArray());
 
             // Assert
 
@@ -73,13 +75,11 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var room = new Room();
 
             room.Email = "Cloud";
 
-            room = calenderService.FindRoom(room.Email);
+            room = roomsCalendar.FindRoom(room.Email);
 
 
             double duration = 61;
@@ -92,7 +92,7 @@ namespace BookingTest
 
             // Act
 
-            var results = booking.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var results = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
 
             // Assert
 
@@ -131,13 +131,11 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var room = new Room();
 
             room.Email = "Nexus";
 
-            room = calenderService.FindRoom(room.Email);
+            room = roomsCalendar.FindRoom(room.Email);
 
 
             double duration = 61;
@@ -150,7 +148,7 @@ namespace BookingTest
 
             // Act
 
-            var results = booking.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var results = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
 
             // Assert
 

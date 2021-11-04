@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Infrastructure.Services.CalendarServices
 {
-    public class PeopleCalender : IPeopleCalender
+    public class PeopleCalender : IPeopleCalendar
     {
         private readonly List<Person> listEvents = new List<Person>()
             {

@@ -1,3 +1,6 @@
+using Infrastructure.Services.Interfarces.BookingService;
+using Infrastructure.Services.Interfarces.CalendarServices;
+using LocalBookings;
 using LocalBookings.Models;
 using LocalBookings.Services;
 using System;
@@ -33,14 +36,16 @@ namespace BookingTest
             };
         }
 
+        IPeopleService peopleService = Factory.CreatePersonService();
+        IPeopleCalendar peopleCalendar = Factory.CreatePeopleCalendar();
+
+
 
         [Fact]
         public void Available_Slots_For_One_Person_Test()
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Terrence";
 
@@ -57,12 +62,12 @@ namespace BookingTest
 
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration);
+            var results = peopleService.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -101,8 +106,6 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Terrence";
 
@@ -122,12 +125,12 @@ namespace BookingTest
                },
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration);
+            var results = peopleService.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -165,8 +168,6 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Terrence";
 
@@ -190,12 +191,12 @@ namespace BookingTest
                }
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration);
+            var results = peopleService.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -236,8 +237,6 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Terrence";
 
@@ -257,12 +256,12 @@ namespace BookingTest
                }
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration);
+            var results = peopleService.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
@@ -302,8 +301,6 @@ namespace BookingTest
         {
             // Arrange
 
-            var booking = new BookingService();
-            var calenderService = new CalendarService();
             var person = new Person();
             person.Email = "Terrence";
 
@@ -320,12 +317,12 @@ namespace BookingTest
 
             };
 
-            person = calenderService.FindPerson(person.Email);
-            var people = calenderService.FindPeople(listOfNames.ToArray());
+            person = peopleCalendar.FindPerson(person.Email);
+            var people = peopleCalendar.FindPeople(listOfNames.ToArray());
 
             // Act
 
-            var results = booking.CalculateAvailableSlots(person, people, duration);
+            var results = peopleService.CalculateAvailableSlots(person, people, duration);
 
             // Assert
 
