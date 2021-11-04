@@ -45,22 +45,22 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 10;
+            int duration = 10;
 
             var listOfRooms = new List<Room>();
 
 
             listOfRooms.Add(room);
 
-            var availableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var availableRooms = roomService.CalculateAvailableRooms(duration, listOfRooms.ToArray());
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
 
 
             // Act
 
-            var results = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots);
+            var results = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots.ToArray());
 
             // Assert
 
@@ -121,21 +121,21 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 10;
+            int duration = 10;
 
             var listOfRooms = new List<Room>();
 
             listOfRooms.Add(room);
 
-            var availableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var availableRooms = roomService.CalculateAvailableRooms(duration, listOfRooms.ToArray());
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
 
 
             // Act
 
-            var results = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots);
+            var results = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots.ToArray());
 
             // Assert
 
@@ -193,21 +193,21 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 10;
+            int duration = 10;
 
             var listOfRooms = new List<Room>();
 
             listOfRooms.Add(room);
 
-            var availableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var availableRooms = roomService.CalculateAvailableRooms(duration, listOfRooms.ToArray());
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
 
 
             // Act
 
-            var results = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots);
+            var results = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(availableRooms, availableSlots.ToArray());
 
             // Assert
 

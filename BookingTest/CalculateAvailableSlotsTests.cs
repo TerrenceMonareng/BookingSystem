@@ -49,7 +49,7 @@ namespace BookingTest
             var person = new Person();
             person.Email = "Terrence";
 
-            double duration = 61;
+            int duration = 61;
 
 
 
@@ -109,7 +109,7 @@ namespace BookingTest
             var person = new Person();
             person.Email = "Terrence";
 
-            double duration = 61;
+            int duration = 61;
 
 
 
@@ -171,7 +171,7 @@ namespace BookingTest
             var person = new Person();
             person.Email = "Terrence";
 
-            double duration = 61;
+            int duration = 61;
 
 
 
@@ -240,7 +240,7 @@ namespace BookingTest
             var person = new Person();
             person.Email = "Terrence";
 
-            double duration = 61;
+            int duration = 61;
 
 
 
@@ -304,7 +304,7 @@ namespace BookingTest
             var person = new Person();
             person.Email = "Terrence";
 
-            double duration = 61;
+            int duration = 61;
 
 
 

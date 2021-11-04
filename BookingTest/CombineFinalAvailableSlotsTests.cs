@@ -50,14 +50,14 @@ namespace BookingTest
             var rooms = roomsCalendar.GetRooms();
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
-            var availableRoomSlots = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots, duration);
+            var availableRoomSlots = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots.ToArray(), duration);
 
 
             // Act
@@ -118,14 +118,14 @@ namespace BookingTest
             var rooms = roomsCalendar.GetRooms();
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
-            var availableRoomSlots = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots, duration);
+            var availableRoomSlots = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots.ToArray(), duration);
 
 
             // Act

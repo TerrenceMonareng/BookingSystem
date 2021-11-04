@@ -25,7 +25,7 @@ namespace Infrastructure.Services.Interfarces.BookingService
         /// <param name="duration"></param>
         /// <returns></returns>
 
-        List<FinalAvailableSlots[]> GetAVailableSlotsForAllRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, double duration);
+        List<FinalAvailableSlots[]> GetAVailableSlotsForAllRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, int duration);
 
         /// <summary>
         /// This function sort the available slots for rooms with simila available slots together

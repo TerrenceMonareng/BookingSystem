@@ -8,13 +8,17 @@ namespace LocalBookings
 {
     public static class Factory
     {
+        private static ICalendarService Calendar;
+
+        private static ICalendarService CreateCalendar() => Calendar ??= new CalendarService();
+
         /// <summary>
         /// This interface is to get a room service
         /// </summary>
         /// <returns></returns>
         public static IRoomsService CreateRoomService()
         {
-            return new RoomService();
+            return new RoomService(CreateCalendar());
         }
 
         /// <summary>
@@ -23,7 +27,7 @@ namespace LocalBookings
         /// <returns></returns>
         public static IPeopleService CreatePersonService()
         {
-            return new PeopleService();
+            return new PeopleService(CreateCalendar());
         }
         
         /// <summary>

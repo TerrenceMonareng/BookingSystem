@@ -148,9 +148,9 @@ namespace LocalBookings
 
             #region Displaying available Rooms 
 
-            var availableSlots = peopleService.CalculateAvailableSlots(name, people, Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(name, people, Convert.ToInt32(duration));
 
-            var listOfAvailableRooms = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots, Convert.ToDouble(duration));
+            var listOfAvailableRooms = peopleAndRoomsService.GetAVailableSlotsForAllRooms(rooms, availableSlots.ToArray(), Convert.ToInt32(duration));
 
             var combinedAvailableSlots = peopleAndRoomsService.CombineFinalAvailableSlots(listOfAvailableRooms);
 
@@ -182,15 +182,15 @@ namespace LocalBookings
             room1.Add(room);
 
 
-            var retrieveAvailableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
+            var retrieveAvailableRooms = roomService.CalculateAvailableRooms(Convert.ToInt32(duration), room1.ToArray());
 
 
-            var Availiable = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(retrieveAvailableRooms, availableSlots);
+            var Availiable = peopleAndRoomsService.GetAvailableSlotsForPeopleAndRoom(retrieveAvailableRooms, availableSlots.ToArray());
 
 
             while (true)
             {
-                if (room.Email != null && retrieveAvailableRooms.Length > 0)
+                if (room.Email != null && retrieveAvailableRooms.Count() > 0)
                 {
                     Console.WriteLine("Your selected room is: " + room.Email);
                     break;
@@ -206,7 +206,7 @@ namespace LocalBookings
                     Console.WriteLine();
                     room.Email = Console.ReadLine();
                     room = roomsCalendar.FindRoom(room.Email);
-                    retrieveAvailableRooms = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), room1.ToArray());
+                    retrieveAvailableRooms = roomService.CalculateAvailableRooms(Convert.ToInt32(duration), room1.ToArray());
 
                 }
 
@@ -240,7 +240,7 @@ namespace LocalBookings
 
             #region Displaying your selected time Slots
 
-            TimeSpan interval = TimeSpan.FromMinutes(Convert.ToDouble(duration));
+            TimeSpan interval = TimeSpan.FromMinutes(Convert.ToInt32(duration));
 
             for (int i = 0; i < Availiable.Length; i++)
             {

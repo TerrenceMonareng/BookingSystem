@@ -53,19 +53,19 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
             listOfRooms.Add(room);
 
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
 
             // Act
 
-            var results = peopleAndRoomsService.GetAVailableSlotsForAllRooms(listOfRooms, availableSlots, duration);
+            var results = peopleAndRoomsService.GetAVailableSlotsForAllRooms(listOfRooms, availableSlots.ToArray(), duration);
 
             // Assert
 
@@ -130,19 +130,19 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
             listOfRooms.Add(room);
 
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
 
             // Act
 
-            var results = peopleAndRoomsService.GetAVailableSlotsForAllRooms(listOfRooms, availableSlots, duration);
+            var results = peopleAndRoomsService.GetAVailableSlotsForAllRooms(listOfRooms, availableSlots.ToArray(), duration);
 
             // Assert
 
@@ -201,19 +201,19 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
             listOfRooms.Add(room);
 
 
-            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), Convert.ToDouble(duration));
+            var availableSlots = peopleService.CalculateAvailableSlots(person, people.ToArray(), duration);
 
 
             // Act
 
-            var results = peopleAndRoomsService.GetAVailableSlotsForAllRooms(listOfRooms, availableSlots, duration);
+            var results = peopleAndRoomsService.GetAVailableSlotsForAllRooms(listOfRooms, availableSlots.ToArray(), duration);
 
             // Assert
 

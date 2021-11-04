@@ -27,7 +27,7 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
@@ -82,7 +82,7 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
@@ -92,7 +92,7 @@ namespace BookingTest
 
             // Act
 
-            var results = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var results = roomService.CalculateAvailableRooms(duration, listOfRooms.ToArray());
 
             // Assert
 
@@ -138,7 +138,7 @@ namespace BookingTest
             room = roomsCalendar.FindRoom(room.Email);
 
 
-            double duration = 61;
+            int duration = 61;
 
             var listOfRooms = new List<Room>();
 
@@ -148,7 +148,7 @@ namespace BookingTest
 
             // Act
 
-            var results = roomService.CalculateAvailableRooms(Convert.ToDouble(duration), listOfRooms.ToArray());
+            var results = roomService.CalculateAvailableRooms(duration, listOfRooms.ToArray());
 
             // Assert
 

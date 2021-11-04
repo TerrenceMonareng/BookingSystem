@@ -74,7 +74,7 @@ namespace Infrastructure.Services.BookingServices
 
             return List.ToArray();
         }
-        public List<FinalAvailableSlots[]> GetAVailableSlotsForAllRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, double duration)
+        public List<FinalAvailableSlots[]> GetAVailableSlotsForAllRooms(IEnumerable<Room> rooms, AvailableSlot[] availableSlots, int duration)
         {
             var availableRoomsList = new List<Room>();
             var availableRoomsList1 = new List<FinalAvailableSlots[]>();
